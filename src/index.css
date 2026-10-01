@@ -1,7 +1,7 @@
 /* ==========================================================================
    GLOBAL STYLES & DESIGN TOKENS - SUNSET AMBER & CORAL PALETTE
    Supports Light & Dark Theme via data-theme attribute
-   Glassy Frosted Navbar, Sleek Micro-Interactions & Ultra-Clean Aesthetics
+   Glassy Frosted Navbar, Sleek Micro-Interactions & Balanced Responsive Margins
    ========================================================================== */
 
 :root {
@@ -35,9 +35,9 @@
   --card-hover-shadow: 0 14px 30px -6px rgba(234, 88, 12, 0.14), 0 2px 8px -2px rgba(15, 23, 42, 0.04);
 
   /* Navbar & Dynamic Component Tokens */
-  --navbar-bg: rgba(255, 255, 255, 0.82);
-  --navbar-border: rgba(226, 232, 240, 0.8);
-  --nav-link-color: #475569;
+  --navbar-bg: rgba(255, 255, 255, 0.84);
+  --navbar-border: rgba(226, 232, 240, 0.85);
+  --nav-link-color: #334155;
   --nav-link-hover-color: #ea580c;
   --nav-link-hover-bg: #ffffff;
   --hero-overlay-stat-bg: rgba(255, 255, 255, 0.95);
@@ -49,7 +49,7 @@
   --btn-secondary-color: #0f172a;
   --btn-secondary-border: #e2e8f0;
   --btn-secondary-hover-bg: #f8fafc;
-  --btn-secondary-hover-border: #cbd5e1;
+  --btn-secondary-hover-border: #ea580c;
   --stat-box-bg: #f8fafc;
   --stat-box-border: #e2e8f0;
   --tag-pill-bg: #f1f5f9;
@@ -70,8 +70,8 @@
   /* Typography */
   --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
-  /* Layout */
-  --max-width: 1080px;
+  /* Layout: Wider max-width eliminates excessive empty margin on laptops */
+  --max-width: 1220px;
   --navbar-height: 62px;
 }
 
@@ -89,7 +89,7 @@
   --bg-input: #101827;          /* Dark form inputs */
   --bg-pill: rgba(20, 29, 46, 0.7);
 
-  /* Sunset Amber & Coral Palette for Dark Mode (Slightly boosted glow) */
+  /* Sunset Amber & Coral Palette for Dark Mode */
   --accent-orange: #f97316;
   --accent-coral: #fb923c;
   --accent-amber: #fbbf24;
@@ -111,8 +111,8 @@
   --card-hover-shadow: 0 16px 36px -4px rgba(249, 115, 22, 0.18), 0 2px 8px -2px rgba(0, 0, 0, 0.4);
 
   /* Navbar & Dynamic Component Tokens */
-  --navbar-bg: rgba(10, 14, 23, 0.85);
-  --navbar-border: rgba(255, 255, 255, 0.08);
+  --navbar-bg: rgba(10, 14, 23, 0.88);
+  --navbar-border: rgba(255, 255, 255, 0.09);
   --nav-link-color: #cbd5e1;
   --nav-link-hover-color: #fb923c;
   --nav-link-hover-bg: rgba(30, 41, 64, 0.85);
@@ -123,9 +123,9 @@
   --badge-text: #fb923c;
   --btn-secondary-bg: rgba(20, 29, 46, 0.85);
   --btn-secondary-color: #f8fafc;
-  --btn-secondary-border: rgba(255, 255, 255, 0.12);
+  --btn-secondary-border: rgba(255, 255, 255, 0.14);
   --btn-secondary-hover-bg: rgba(30, 41, 64, 0.95);
-  --btn-secondary-hover-border: rgba(255, 255, 255, 0.22);
+  --btn-secondary-hover-border: #f97316;
   --stat-box-bg: rgba(16, 23, 38, 0.6);
   --stat-box-border: rgba(255, 255, 255, 0.08);
   --tag-pill-bg: rgba(30, 41, 59, 0.6);
@@ -192,19 +192,19 @@ button {
   transition: background-color 0.3s ease;
 }
 
-/* Reusable Container Utility */
+/* Reusable Container Utility with Proportional Laptop Margins */
 .container {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 clamp(16px, 3vw, 32px);
 }
 
 /* Section Header Styling Utility */
 .section-header {
   text-align: center;
-  max-width: 580px;
-  margin: 0 auto 24px auto;
+  max-width: 620px;
+  margin: 0 auto 20px auto;
 }
 
 .section-badge {
@@ -248,7 +248,7 @@ button {
   justify-content: center;
   gap: 7px;
   background: var(--primary-gradient);
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
   font-size: 0.84rem;
   padding: 8px 18px;
@@ -260,6 +260,7 @@ button {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px -2px rgba(234, 88, 12, 0.5);
+  color: #ffffff !important;
 }
 
 .btn-secondary {
@@ -280,6 +281,8 @@ button {
 
 .btn-secondary:hover {
   background: var(--btn-secondary-hover-bg);
-  border-color: var(--btn-secondary-hover-border);
+  border-color: var(--accent-orange) !important;
+  color: var(--accent-orange) !important;
   transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.15);
 }

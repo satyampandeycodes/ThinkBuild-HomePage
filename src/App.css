@@ -129,6 +129,42 @@
   height: 64px;
 }
 
+
+/* Brand Logo Custom Vector Emblem */
+.brand-logo-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  user-select: none;
+}
+
+.brand-logo-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.brand-logo-container.compact .brand-logo-icon-wrap {
+  width: 28px;
+  height: 28px;
+}
+
+.brand-logo-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 3px 8px rgba(234, 88, 12, 0.32));
+}
+
+.navbar-brand:hover .brand-logo-icon-wrap {
+  transform: scale(1.08) rotate(-4deg);
+}
+
 .navbar-brand {
   display: inline-flex;
   align-items: center;
@@ -145,7 +181,7 @@
 }
 
 .navbar-brand:hover {
-  background: rgba(234, 88, 12, 0.05);
+  background: rgba(234, 88, 12, 0.08);
 }
 
 .brand-icon {
@@ -222,9 +258,9 @@
 }
 
 .nav-links a:hover {
-  color: var(--nav-link-hover-color);
+  color: var(--accent-orange) !important;
   background: var(--nav-link-hover-bg);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -525,7 +561,7 @@
    3. ABOUT SECTION (Sunset Theme)
    -------------------------------------------------------------------------- */
 .about-section {
-  padding: 40px 0 36px 0;
+  padding: 32px 0 28px 0;
   background-color: var(--bg-secondary);
 }
 
@@ -632,7 +668,7 @@
    4. SERVICES SECTION (3-column, compact on laptops)
    -------------------------------------------------------------------------- */
 .services-section {
-  padding: 40px 0;
+  padding: 32px 0;
   background-color: var(--bg-primary);
 }
 
@@ -718,7 +754,7 @@
 }
 
 .service-learn-more:hover {
-  color: var(--accent-dark);
+  color: var(--accent-coral) !important;
   gap: 8px;
 }
 
@@ -734,7 +770,7 @@
    5. PRODUCTS SECTION (With Real Visual Mockups)
    -------------------------------------------------------------------------- */
 .products-section {
-  padding: 40px 0;
+  padding: 32px 0;
   background-color: var(--bg-secondary);
 }
 
@@ -872,7 +908,7 @@
    6. WHY CHOOSE US SECTION
    -------------------------------------------------------------------------- */
 .why-section {
-  padding: 40px 0;
+  padding: 32px 0;
   background-color: var(--bg-primary);
 }
 
@@ -941,7 +977,7 @@
    7. FAQ SECTION
    -------------------------------------------------------------------------- */
 .faq-section {
-  padding: 40px 0;
+  padding: 32px 0;
   background-color: var(--bg-secondary);
 }
 
@@ -1028,7 +1064,7 @@
    8. CONTACT SECTION
    -------------------------------------------------------------------------- */
 .contact-section {
-  padding: 40px 0 46px 0;
+  padding: 32px 0 24px 0;
   background-color: var(--bg-primary);
 }
 
@@ -1275,14 +1311,14 @@
 .footer-section {
   background-color: var(--footer-bg);
   border-top: 1px solid var(--border-subtle);
-  padding: 36px 0 20px 0;
+  padding: 28px 0 20px 0;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   gap: 28px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .footer-brand {
@@ -1310,25 +1346,26 @@
 }
 
 .social-icon-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: #ffffff;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-size: 0.95rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .social-icon-btn:hover {
-  background: var(--primary-gradient);
-  color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.3);
+  background: var(--primary-gradient) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 14px rgba(234, 88, 12, 0.35);
 }
 
 .footer-heading {
@@ -1352,8 +1389,8 @@
 }
 
 .footer-links a:hover {
-  color: var(--accent-orange);
-  padding-left: 2px;
+  color: var(--accent-orange) !important;
+  padding-left: 3px;
 }
 
 .footer-contact-items {
@@ -1371,7 +1408,7 @@
 }
 
 .footer-contact-item a:hover {
-  color: var(--accent-orange);
+  color: var(--accent-orange) !important;
 }
 
 .footer-item-icon {
@@ -1396,21 +1433,25 @@
 .scroll-top-btn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  background: #ffffff;
+  gap: 6px;
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  padding: 5px 12px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
 }
 
 .scroll-top-btn:hover {
-  background: #f1f5f9;
-  color: var(--text-primary);
+  background: var(--primary-gradient) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
 }
 
 /* --------------------------------------------------------------------------

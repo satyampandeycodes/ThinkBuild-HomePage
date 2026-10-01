@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  FiTrendingUp, 
   FiInstagram, 
   FiLinkedin, 
   FiFacebook, 
@@ -11,12 +10,13 @@ import {
   FiArrowUp
 } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import BrandLogo from './BrandLogo';
 
 /**
  * Footer Component
  * 
  * Interactive Concepts Used:
- * - Clean light theme design
+ * - Clean responsive design with tightened proportional spacing
  * - Framer Motion micro-interactions on social icons and scroll to top button
  */
 function Footer() {
@@ -35,12 +35,7 @@ function Footer() {
           {/* Column 1: Brand Info & Social Media Links */}
           <div className="footer-col brand-col">
             <a href="#hero" className="footer-brand">
-              <span className="brand-icon">
-                <FiTrendingUp />
-              </span>
-              <span className="brand-text">
-                Digital<span className="brand-gradient">Marketing</span>
-              </span>
+              <BrandLogo size="compact" showReloadHint={false} />
             </a>
             
             <p className="footer-description">

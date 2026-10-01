@@ -3,6 +3,8 @@ import { FiMenu, FiX, FiTrendingUp, FiRefreshCw, FiSun, FiMoon } from 'react-ico
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 
+import BrandLogo from './BrandLogo';
+
 /**
  * Navbar Component
  * 
@@ -103,15 +105,7 @@ function Navbar({ theme = 'light', toggleTheme }) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.96 }}
           >
-            <span className="brand-icon">
-              <FiTrendingUp />
-            </span>
-            <span className="brand-text">
-              Digital<span className="brand-gradient">Marketing</span>
-            </span>
-            <span className="brand-reload-hint" title="Click to reload page">
-              <FiRefreshCw className="hint-icon" />
-            </span>
+            <BrandLogo showReloadHint={true} />
           </motion.a>
 
           {/* Desktop Navigation Links */}
