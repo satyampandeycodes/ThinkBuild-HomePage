@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FiMenu, FiX, FiTrendingUp, FiRefreshCw, FiSun, FiMoon } from 'react-icons/fi';
+import { Link, NavLink } from 'react-router-dom';
+import { FiMenu, FiX, FiRefreshCw, FiSun, FiMoon } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
-
 import BrandLogo from './BrandLogo';
 
 /**
  * Navbar Component
  * 
  * Interactive Concepts:
+ * - Multi-page navigation with active route highlights
  * - Glassy Frosted Navigation Bar with island pill navigation
  * - Light / Dark Mode Toggle Button with smooth icon animations
  * - Full-page reload with custom animated loading curtain when clicking the top-left brand
@@ -40,14 +41,13 @@ function Navbar({ theme = 'light', toggleTheme }) {
 
   // Full page reload with smooth animated transition
   const handleBrandReload = (e) => {
-    e.preventDefault();
     setIsReloading(true);
     closeMenu();
 
-    // After animation displays, perform complete browser reload
     setTimeout(() => {
+      window.location.href = '/';
       window.location.reload();
-    }, 700);
+    }, 650);
   };
 
   return (
@@ -97,25 +97,47 @@ function Navbar({ theme = 'light', toggleTheme }) {
       <header className="navbar-wrapper glassy-navbar" ref={navRef}>
         <nav className="navbar container">
           {/* Brand with animated full-page reload */}
-          <motion.a 
-            href="#hero" 
+          <Link 
+            to="/" 
             className="navbar-brand" 
             onClick={handleBrandReload}
             title="Click Digital Marketing to reload page with animation"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.96 }}
           >
             <BrandLogo showReloadHint={true} />
-          </motion.a>
+          </Link>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Multi-Page Navigation Links */}
           <ul className="nav-links desktop-nav">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/services" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+                Services
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/products" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+                Products
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/faq" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+                FAQ
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+                Contact
+              </NavLink>
+            </li>
           </ul>
 
           {/* Action Button & Theme Toggle (Desktop) */}
@@ -149,14 +171,11 @@ function Navbar({ theme = 'light', toggleTheme }) {
             </motion.button>
 
             {/* Primary Get Started Button */}
-            <motion.a 
-              href="#contact" 
-              className="btn-primary nav-btn"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Get Started
-            </motion.a>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <Link to="/contact" className="btn-primary nav-btn">
+                Get Started
+              </Link>
+            </motion.div>
           </div>
 
           {/* Hamburger Icon Button for Mobile */}
@@ -173,12 +192,12 @@ function Navbar({ theme = 'light', toggleTheme }) {
         {/* Mobile Drawer Navigation */}
         <div className={`mobile-nav-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-links">
-            <li><a href="#hero" onClick={closeMenu}>Home</a></li>
-            <li><a href="#about" onClick={closeMenu}>About</a></li>
-            <li><a href="#services" onClick={closeMenu}>Services</a></li>
-            <li><a href="#products" onClick={closeMenu}>Products</a></li>
-            <li><a href="#faq" onClick={closeMenu}>FAQ</a></li>
-            <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+            <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>
+            <li><NavLink to="/about" onClick={closeMenu}>About</NavLink></li>
+            <li><NavLink to="/services" onClick={closeMenu}>Services</NavLink></li>
+            <li><NavLink to="/products" onClick={closeMenu}>Products</NavLink></li>
+            <li><NavLink to="/faq" onClick={closeMenu}>FAQ</NavLink></li>
+            <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
           </ul>
 
           {/* Mobile Theme Toggle Row */}
@@ -202,9 +221,9 @@ function Navbar({ theme = 'light', toggleTheme }) {
           </div>
 
           <div className="mobile-cta">
-            <a href="#contact" className="btn-primary" onClick={closeMenu}>
+            <Link to="/contact" className="btn-primary" onClick={closeMenu}>
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
       </header>

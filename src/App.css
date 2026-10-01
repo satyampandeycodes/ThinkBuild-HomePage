@@ -69,9 +69,20 @@
 }
 
 @keyframes reloadPulse {
-  0% { transform: scale(0.85); opacity: 0.8; }
-  50% { transform: scale(1.18); opacity: 0.2; }
-  100% { transform: scale(0.85); opacity: 0.8; }
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.18);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
 }
 
 .reload-title {
@@ -411,9 +422,20 @@
 }
 
 @keyframes pulseAnimation {
-  0% { transform: scale(0.9); opacity: 0.7; }
-  50% { transform: scale(1.3); opacity: 1; }
-  100% { transform: scale(0.9); opacity: 0.7; }
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
 }
 
 .hero-title {

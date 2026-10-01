@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   FiInstagram, 
   FiLinkedin, 
@@ -16,6 +17,7 @@ import BrandLogo from './BrandLogo';
  * Footer Component
  * 
  * Interactive Concepts Used:
+ * - Multi-page navigation links
  * - Clean responsive design with tightened proportional spacing
  * - Framer Motion micro-interactions on social icons and scroll to top button
  */
@@ -34,9 +36,9 @@ function Footer() {
         <div className="footer-grid">
           {/* Column 1: Brand Info & Social Media Links */}
           <div className="footer-col brand-col">
-            <a href="#hero" className="footer-brand">
+            <Link to="/" className="footer-brand" onClick={scrollToTop}>
               <BrandLogo size="compact" showReloadHint={false} />
-            </a>
+            </Link>
             
             <p className="footer-description">
               Helping businesses grow through creative, data-backed digital marketing strategies.
@@ -69,11 +71,11 @@ function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">Company</h4>
             <ul className="footer-links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/products">Products</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
@@ -81,10 +83,10 @@ function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">Services</h4>
             <ul className="footer-links">
-              <li><a href="#services">SEO Optimization</a></li>
-              <li><a href="#services">Social Media</a></li>
-              <li><a href="#services">Content Strategy</a></li>
-              <li><a href="#services">Paid Advertising</a></li>
+              <li><Link to="/services">SEO Optimization</Link></li>
+              <li><Link to="/services">Social Media</Link></li>
+              <li><Link to="/services">Content Strategy</Link></li>
+              <li><Link to="/services">Paid Advertising</Link></li>
             </ul>
           </div>
 
