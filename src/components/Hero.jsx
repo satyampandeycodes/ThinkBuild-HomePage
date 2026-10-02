@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { FiArrowRight, FiTrendingUp, FiCheckCircle } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -50,16 +49,22 @@ function Hero() {
           </p>
 
           <div className="hero-actions gsap-hero-item">
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Link to="/contact" className="btn-primary hero-btn">
-                Get Started <FiArrowRight />
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Link to="/services" className="btn-secondary hero-btn">
-                Explore Services
-              </Link>
-            </motion.div>
+            <motion.a
+              href="#contact"
+              className="btn-primary hero-btn"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Get Started <FiArrowRight />
+            </motion.a>
+            <motion.a
+              href="#services"
+              className="btn-secondary hero-btn"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Explore Services
+            </motion.a>
           </div>
 
           <div className="hero-trust gsap-hero-item">
@@ -80,16 +85,16 @@ function Hero() {
 
         {/* Right Column: Sunset Visual Graphic Image with Floating Metrics Chip */}
         <div className="hero-visual">
-          <motion.div 
+          <motion.div
             className="hero-image-wrapper"
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
           >
-            <img 
-              src="/images/hero-growth.jpg" 
-              alt="Digital Marketing Campaign Analytics and Growth Dashboard" 
+            <img
+              src="/images/hero-growth.jpg"
+              alt="Digital Marketing Campaign Analytics and Growth Dashboard"
               className="hero-growth-image"
             />
 

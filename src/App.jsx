@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Products from './components/Products';
+import WhyChooseUs from './components/WhyChooseUs';
+import FAQ from './components/FAQ';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
-
-// Independent Multi-Page Views
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
-import ProductsPage from './pages/ProductsPage';
-import FAQPage from './pages/FAQPage';
-import ContactPage from './pages/ContactPage';
-
 import './App.css';
 
 /**
  * Main App Component
  * 
- * Architecture:
- * - Multi-Page Client-Side Routing with React Router
- * - Independent pages for Home, About, Services, Products, FAQ, and Contact
- * - Global Theme state (Light & Dark Mode) with localStorage persistence
- * - ScrollToTop on every navigation
+ * Beginner React Concepts:
+ * - Root Component that combines all independent section components
+ * - Clean, modular project structure
+ * - Follows standard single-page website architecture
+ * - Manages Theme State (Light & Dark Mode) with localStorage persistence
  */
 function App() {
   // Theme state: defaults to saved user preference or system theme or 'light'
@@ -43,7 +39,7 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
     try {
       localStorage.setItem('theme', theme);
-    } catch (e) {}
+    } catch (e) { }
   }, [theme]);
 
   // Toggle function passed down to Navbar
@@ -52,30 +48,37 @@ function App() {
   };
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className={`app-wrapper theme-${theme}`}>
-        {/* Sticky Navigation Bar with Multi-Page Links & Theme Toggle */}
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
+    <div className={`app-wrapper theme-${theme}`}>
+      {/* 1. Sticky Navigation Bar with Theme Toggle */}
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-        {/* Multi-Page Route Outlet */}
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/faq" element={<FAQPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            {/* Catch-all redirect to Home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
+      {/* Main Page Sections */}
+      <main>
+        {/* 2. Hero Section */}
+        <Hero />
 
-        {/* Agency Footer */}
-        <Footer />
-      </div>
-    </Router>
+        {/* 3. About Us Section */}
+        <About />
+
+        {/* 4. Services Section */}
+        <Services />
+
+        {/* 5. Products Section */}
+        <Products />
+
+        {/* 6. Why Choose Us Section */}
+        <WhyChooseUs />
+
+        {/* 7. FAQ Accordion Section */}
+        <FAQ />
+
+        {/* 8. Requirement / Contact Form Section */}
+        <Contact />
+      </main>
+
+      {/* 9. Dark Agency Footer */}
+      <Footer />
+    </div>
   );
 }
 
