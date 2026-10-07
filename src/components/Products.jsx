@@ -98,12 +98,6 @@ function Products() {
                 <h3 className="product-name">{product.name}</h3>
                 <p className="product-tagline">{product.tagline}</p>
 
-                {/* Price Row */}
-                <div className="product-price-row">
-                  <span className="product-price">{product.price}</span>
-                  <span className="product-billing">/ one-time access</span>
-                </div>
-
                 {/* Features List */}
                 <ul className="product-features-list">
                   {product.features.map((feature, fIdx) => (

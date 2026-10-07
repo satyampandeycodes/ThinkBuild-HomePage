@@ -78,7 +78,7 @@ function Navbar({ theme = 'light', toggleTheme }) {
                 </motion.div>
                 <div className="reload-pulse-ring"></div>
               </div>
-              <h3 className="reload-title">Reloading Digital Marketing</h3>
+              <h3 className="reload-title">Reloading RVCanvas</h3>
               <p className="reload-sub">Refreshing assets, styles & components...</p>
               <div className="reload-progress-bar">
                 <motion.div
@@ -101,7 +101,7 @@ function Navbar({ theme = 'light', toggleTheme }) {
             href="#hero"
             className="navbar-brand"
             onClick={handleBrandReload}
-            title="Click Digital Marketing to reload page with animation"
+            title="Click RVCanvas to reload page with animation"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.96 }}
           >

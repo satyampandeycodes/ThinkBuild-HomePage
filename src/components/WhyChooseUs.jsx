@@ -53,7 +53,7 @@ function WhyChooseUs() {
           transition={{ duration: 0.5 }}
         >
           <span className="section-badge">Why Partner With Us</span>
-          <h2 className="section-title">Why Choose Digital Marketing?</h2>
+          <h2 className="section-title">Why Choose RVCanvas?</h2>
           <p className="section-subtitle">
             We prioritize real business outcomes over vanity metrics, giving you clear roadmaps to scale.
           </p>

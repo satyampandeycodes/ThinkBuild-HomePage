@@ -1,53 +1,23 @@
 import React from 'react';
+import logoImg from '../assets/rvcanvas-logo.png';
 
 /**
  * BrandLogo Component
- * Modern Digital Marketing Agency emblem combining a gradient growth vector with clean typography.
+ * Official RVCanvas emblem and modern brand typography.
  */
 function BrandLogo({ size = 'normal', showReloadHint = false }) {
   return (
     <div className={`brand-logo-container ${size}`}>
       <div className="brand-logo-icon-wrap">
-        <svg 
-          className="brand-logo-svg" 
-          viewBox="0 0 32 32" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <defs>
-            <linearGradient id="brandLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ea580c" />
-              <stop offset="50%" stopColor="#f97316" />
-              <stop offset="100%" stopColor="#fbbf24" />
-            </linearGradient>
-            <linearGradient id="brandSparkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ffffff" />
-              <stop offset="100%" stopColor="#ffedd5" />
-            </linearGradient>
-          </defs>
-          
-          {/* Squircle Background Base */}
-          <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#brandLogoGradient)" />
-          
-          {/* Dynamic Growth Apex & Interconnected Pulse Lines */}
-          <path 
-            d="M8.5 19.5L14 14L18 17.5L23.5 11.5M23.5 11.5H19M23.5 11.5V16" 
-            stroke="url(#brandSparkGradient)" 
-            strokeWidth="2.4" 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-          />
-          {/* Subtle node accent dots */}
-          <circle cx="8.5" cy="19.5" r="1.5" fill="#ffffff" />
-          <circle cx="14" cy="14" r="1.5" fill="#ffffff" />
-          <circle cx="18" cy="17.5" r="1.5" fill="#ffffff" />
-          <circle cx="23.5" cy="11.5" r="2.2" fill="#ffffff" />
-        </svg>
+        <img 
+          src={logoImg} 
+          alt="RVCanvas Logo" 
+          className="brand-logo-img" 
+        />
       </div>
 
       <span className="brand-text">
-        Digital<span className="brand-gradient">Marketing</span>
+        RV<span className="brand-gradient">Canvas</span>
       </span>
 
       {showReloadHint && (

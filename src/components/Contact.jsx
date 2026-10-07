@@ -111,7 +111,7 @@ function Contact() {
                 <div className="detail-icon"><FiMail /></div>
                 <div>
                   <span className="detail-label">Email Us</span>
-                  <a href="mailto:hello@digitalmarketing.com" className="detail-value">hello@digitalmarketing.com</a>
+                  <a href="mailto:hello@rvcanvas.com" className="detail-value">hello@rvcanvas.com</a>
                 </div>
               </div>
 

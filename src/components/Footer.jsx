@@ -94,7 +94,7 @@ function Footer() {
             <div className="footer-contact-items">
               <p className="footer-contact-item">
                 <FiMail className="footer-item-icon" />
-                <a href="mailto:hello@digitalmarketing.com">hello@digitalmarketing.com</a>
+                <a href="mailto:hello@rvcanvas.com">hello@rvcanvas.com</a>
               </p>
               <p className="footer-contact-item">
                 <FiPhone className="footer-item-icon" />
@@ -111,7 +111,7 @@ function Footer() {
         {/* Footer Bottom Bar with Copyright & Scroll to Top */}
         <div className="footer-bottom">
           <p className="copyright-text">
-            © 2026 Digital Marketing. All Rights Reserved.
+            © 2026 RVCanvas. All Rights Reserved.
           </p>
           <motion.button
             type="button"

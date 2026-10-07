@@ -36,7 +36,7 @@ function About() {
             </h2>
 
             <p className="about-description">
-              Digital Marketing is a creative agency helping brands connect with active audiences through data-driven campaigns, compelling content, and predictable ROI.
+              RVCanvas is a creative agency helping brands connect with active audiences through data-driven campaigns, compelling content, and predictable ROI.
             </p>
 
             <div className="about-features-list">
